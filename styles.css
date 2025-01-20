@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #E1E5EE;
+    color: #2A324B;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
