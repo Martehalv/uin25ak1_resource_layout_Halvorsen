@@ -28,10 +28,10 @@ nav {
     cursor: pointer;
 }
 
-.aktiv.fane {
+/*.aktiv.fane {
     background-color: #fff;
     color: #2A324B;
-}
+} */
 
 main {
     background-color: #fff;
@@ -39,4 +39,23 @@ main {
     height: 300px;
     padding: 2rem;  
     margin: 0 auto;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+a {
+    color: #58699D;
+    text-decoration: underline;
 }
