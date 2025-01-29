@@ -95,39 +95,33 @@ const resources = [
     },
 ];
 
-function showResources(category) {
-    // Finn den aktuelle ressursen
-    const resource = resources.find((res) => res.category === category);
+function CreateContent(category) {
+    const FindResource = resources.find((ContentItem) => ContentItem.category === category);
+    const CategoryData = document.querySelector(".resources-category");
+    const TextData = document.querySelector(".resources-text");
+    const ListData = document.querySelector(".resources-list");
 
-    // Oppdater HTML-innhold
-    const categoryEl = document.querySelector(".resources-category");
-    const textEl = document.querySelector(".resources-text");
-    const listEl = document.querySelector(".resources-list");
+    if (FindResource) {
+        CategoryData.textContent = FindResource.category;
+        TextData.textContent = FindResource.text;
 
-    if (resource) {
-        categoryEl.textContent = resource.category;
-        textEl.textContent = resource.text;
-
-        // Oppdater listen med lenker
-        listEl.innerHTML = resource.sources
-            .map(
-                (source) =>
-                    `<li><a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.title}</a></li>`
-            )
-            .join("");
+        ListData.innerHTML = FindResource.sources.map
+            ((Link) => 
+                `<li>
+                    <a href="${Link.url}">${Link.title}</a>
+                </li>` )
+                .join("");
     }
-}
+};
 
-// Legg til klikkhåndterer for knappene
 document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".page");
-
-    buttons.forEach((button) => {
+    const Pagebuttons = document.querySelectorAll(".page");
+    
+    Pagebuttons.forEach((button) => {
         button.addEventListener("click", () => {
-            showResources(button.textContent); // Bruk knappeteksten som kategori
+            CreateContent(button.textContent); 
         });
     });
 
-    // Vis "HTML" som standard når siden lastes
-    showResources("HTML");
+    CreateContent("HTML");
 });
