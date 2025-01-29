@@ -17,7 +17,7 @@ nav {
     justify-content: center;
 }
 
-.fane {
+.page {
     background-color: #2A324B;
     color: #fff;
     border: none;
@@ -28,10 +28,10 @@ nav {
     cursor: pointer;
 }
 
-/*.aktiv.fane {
+.page.active {
     background-color: #fff;
     color: #2A324B;
-} */
+}
 
 main {
     background-color: #fff;

@@ -95,3 +95,39 @@ const resources = [
     },
 ];
 
+function showResources(category) {
+    // Finn den aktuelle ressursen
+    const resource = resources.find((res) => res.category === category);
+
+    // Oppdater HTML-innhold
+    const categoryEl = document.querySelector(".resources-category");
+    const textEl = document.querySelector(".resources-text");
+    const listEl = document.querySelector(".resources-list");
+
+    if (resource) {
+        categoryEl.textContent = resource.category;
+        textEl.textContent = resource.text;
+
+        // Oppdater listen med lenker
+        listEl.innerHTML = resource.sources
+            .map(
+                (source) =>
+                    `<li><a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.title}</a></li>`
+            )
+            .join("");
+    }
+}
+
+// Legg til klikkhåndterer for knappene
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".page");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            showResources(button.textContent); // Bruk knappeteksten som kategori
+        });
+    });
+
+    // Vis "HTML" som standard når siden lastes
+    showResources("HTML");
+});
