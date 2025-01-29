@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     background-color: #E1E5EE;
@@ -41,18 +41,23 @@ main {
     margin: 0 auto;
 }
 
+.info {
+    margin: 3rem 3rem 3rem 3.5rem;
+    font-family: "Montserrat", serif;
+}
+
 h2 {
     font-size: 24px;
     margin-bottom: 1.5rem;
 }
 
 ul {
-    list-style: none;
     padding: 0;
+    margin-left: 4rem;
 }
 
 li {
-    margin: 0.5rem 0;
+    margin: 0.2rem 0;
 }
 
 a {
