@@ -96,16 +96,17 @@ const resources = [
 ];
 
 function CreateContent(category) {
-    const FindResource = resources.find((ContentItem) => ContentItem.category === category);
+    const FilterResource = resources.filter((ContentItem) => ContentItem.category === category);
     const CategoryData = document.querySelector(".resources-category");
     const TextData = document.querySelector(".resources-text");
     const ListData = document.querySelector(".resources-list");
 
-    if (FindResource) {
-        CategoryData.textContent = FindResource.category;
-        TextData.textContent = FindResource.text;
+    if (FilterResource.length > 0) {
+        const Filter = FilterResource[0];
+        CategoryData.textContent = Filter.category;
+        TextData.textContent = Filter.text;
 
-        ListData.innerHTML = FindResource.sources.map
+        ListData.innerHTML = Filter.sources.map
             ((Link) => 
                 `<li>
                     <a href="${Link.url}">${Link.title}</a>
@@ -125,3 +126,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     CreateContent("HTML");
 });
+

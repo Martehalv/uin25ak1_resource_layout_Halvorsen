@@ -28,6 +28,11 @@ nav {
     cursor: pointer;
 }
 
+.page:hover {
+    background-color: #fff;
+    color: #2A324B;
+}
+
 .page.active {
     background-color: #fff;
     color: #2A324B;
