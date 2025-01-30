@@ -96,14 +96,14 @@ const resources = [
 ];
 
 function CreateContent(category) {
-    const FilterResource = resources.filter((ContentItem) => ContentItem.category === category);
     const CategoryData = document.querySelector(".resources-category");
     const TextData = document.querySelector(".resources-text");
     const ListData = document.querySelector(".resources-list");
 
-    if (FilterResource.length > 0) {
+    const FilterResource = resources.filter((ContentItem) => ContentItem.category === category);  //Kilde til filter() : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+    if (FilterResource.length > 0) {    
         const Filter = FilterResource[0];
-        CategoryData.textContent = Filter.category;
+        CategoryData.textContent = Filter.category;   //Kilde til textContent : https://www.w3schools.com/jsref/prop_node_textcontent.asp
         TextData.textContent = Filter.text;
 
         ListData.innerHTML = Filter.sources.map
@@ -111,11 +111,11 @@ function CreateContent(category) {
                 `<li>
                     <a href="${Link.url}">${Link.title}</a>
                 </li>` )
-                .join("");
+                .join("");    //Kilde til .join : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
     }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {    //Kilde til DOMContentLoaded : https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
     const Pagebuttons = document.querySelectorAll(".page");
     
     Pagebuttons.forEach((button) => {

@@ -28,12 +28,14 @@ nav {
     cursor: pointer;
 }
 
-.page:hover {
+/* Fikk ikke :active til å fungere, og fant ikke ut hvordan jeg skulle løse det. 
+Har lagt inn :focus istedenfor, den fungerer bare når man trykker på fanene på nettsiden. */
+.page:active {   
     background-color: #fff;
     color: #2A324B;
 }
 
-.page.active {
+.page:focus {
     background-color: #fff;
     color: #2A324B;
 }
